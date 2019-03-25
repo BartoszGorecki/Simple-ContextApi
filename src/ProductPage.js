@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Navigation from './Navigation'
 import './ProductPage.css'
 import ShopContext from './context/shop-context'
 
-class ProductPage extends Component {
-    render() {
+const ProductPage = props => {
         return (
             <ShopContext.Consumer>
                 { ({ cart, products, addProduct }) => (
@@ -32,6 +31,5 @@ class ProductPage extends Component {
                 )}
             </ShopContext.Consumer>
         )
-    }
 }
 export default ProductPage
