@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navigation.css'
 
-class Navigation extends Component {
-    render() {
-        return (
-            <div className='main-nav'>
-                <li>
-                    <NavLink to='/'>Products</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/cart'>Cart</NavLink>
-                </li>
-            </div>
-        )
-    }
+const Navigation = ({ cartNumber }) => {
+    return (
+        <div className='main-nav'>
+            <li>
+                <NavLink to='/'>Products</NavLink>
+            </li>
+            <li>
+                <NavLink to='/cart'>Cart { cartNumber !== 0 && <span>({cartNumber})</span> }</NavLink>
+            </li>
+        </div>
+    )
 }
 export default Navigation
